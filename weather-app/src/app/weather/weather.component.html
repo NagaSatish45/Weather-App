@@ -1,0 +1,45 @@
+<div class="container">
+    <ul class="nav nav-tabs">
+      <li class="nav-item">
+        <a class="nav-link" href="#" (click)="getWeatherData('Rio de Janeiro')">Rio de Janeiro</a>
+      </li>&nbsp;
+      <li class="nav-item">
+        <a class="nav-link" href="#" (click)="getWeatherData('Beijing')">Beijing</a>
+      </li>&nbsp;
+      <li class="nav-item">
+        <a class="nav-link" href="#" (click)="getWeatherData('Los Angeles')">Los Angeles</a>
+      </li>
+    </ul>&nbsp;
+    
+
+    <div class="weather-info">
+      <h2>Weather in {{ weatherData?.name }}</h2>
+      
+      <!-- Display current weather -->
+      <div *ngIf="weatherData?.weather">
+        <h3>Current Weather : {{weatherData?.weather[0].main}}</h3>
+        <p>Temperature: {{ weatherData.main.temp| number: '1.0-0' }}°</p>
+        <p>Feels Like: {{ weatherData.main.feels_like | number: '1.0-0' }}°</p>
+        <p>Humidity: {{ weatherData.main.humidity }}%</p>
+        <p>pressure: {{ weatherData.main.pressure }}</p>
+        <img [src]="getIconUrl(weatherData?.weather[0].icon)" alt="Weather Icon">
+      </div>
+      
+      <!-- Display hourly forecast -->
+      <div *ngIf="weatherData">
+        <h3>Hourly Forecast</h3>
+        <div>
+          <p>{{ weatherData.dt * 1000 | date: 'shortTime' }}: {{ weatherData.main.temp | number: '1.0-0' }}°, {{ weatherData.weather[0].description }}</p>
+        </div>
+      </div>
+      
+      <!-- Display daily forecast -->
+      <div *ngIf="weatherData">
+        <h3>Daily Forecast</h3>
+        <div>
+          <p>{{ weatherData.dt * 1000 | date: 'fullDate' }}: Max {{ weatherData.main.temp_max | number: '1.0-0' }}°, Min {{ weatherData.main.temp_min | number: '1.0-0' }}°, {{ weatherData.weather[0].description }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  

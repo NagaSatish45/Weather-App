@@ -1,0 +1,61 @@
+/* Container for the entire component */
+.container {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+  }
+  
+  /* Style for the navigation tabs */
+  .nav-tabs {
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 20px;
+  }
+  
+  .nav-item {
+    margin-right: 5px;
+  }
+  
+  .nav-link {
+    border: 1px solid transparent;
+    border-radius: 5px 5px 0 0;
+    padding: 10px 15px;
+  }
+  
+  .nav-link:hover {
+    border-color: #ddd;
+  }
+  
+  .nav-link.active {
+    color: #fff;
+    background-color: #007bff;
+    border-color: #007bff;
+  }
+  
+  /* Style for the weather info display */
+  .weather-info {
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+  }
+  
+  .weather-info h2,
+  .weather-info h3 {
+    color: #333;
+  }
+  
+  /* Style for the current weather */
+  .weather-info div h3 {
+    margin-top: 20px;
+  }
+  
+  .weather-info p {
+    color: #555;
+    line-height: 1.6;
+  }
+  
+  /* Adjustments for weather icons */
+  .weather-icon {
+    width: 50px;
+    height: 50px;
+  }
+  
